@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="ocean" cx="34%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#7ddfff"/>
+      <stop offset="45%" stop-color="#1679c4"/>
+      <stop offset="100%" stop-color="#062a5f"/>
+    </radialGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="29" fill="#49d3ff" opacity=".28" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="25" fill="url(#ocean)"/>
+  <path fill="#47c66b" d="M18 18c5-5 13-7 21-4-4 1-7 4-9 7-4 0-8 0-12-3Zm-7 17c4-4 9-5 15-3 4 2 8 4 12 1 3-2 6-2 11 0-1 7-6 14-13 18-4-4-8-5-13-5-5 0-9-3-12-11Zm31-15c6 3 10 9 12 16-5-2-9-2-13 1-2 1-4 2-7 2 4-6 4-12 8-19Z"/>
+  <path fill="#b7f0a0" opacity=".9" d="M23 13c3-1 7-2 10-1-2 2-4 4-5 7-3 0-6-1-5-6Zm5 34c4 0 7 1 10 4-5 3-11 4-17 2 1-4 3-6 7-6Z"/>
+  <path fill="none" stroke="#ffffff" stroke-opacity=".62" stroke-width="2.2" d="M6 39c14-13 34-17 52-10"/>
+</svg>
+

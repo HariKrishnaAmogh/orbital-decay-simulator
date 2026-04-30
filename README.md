@@ -64,16 +64,16 @@ The app works without optional services by using deterministic fallbacks.
 
 ## Local Setup
 
-Open the project in VSCode:
+Open the project in VSCode from the repository root:
 
 ```powershell
-code "C:\Personal Projects\Codex Challenge"
+code .
 ```
 
 ### Backend
 
 ```powershell
-cd "C:\Personal Projects\Codex Challenge\backend"
+cd backend
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
@@ -97,7 +97,7 @@ Expected:
 Open a second terminal:
 
 ```powershell
-cd "C:\Personal Projects\Codex Challenge\frontend"
+cd frontend
 npm install
 npm.cmd run dev -- --host 127.0.0.1 --port 5173
 ```
@@ -153,7 +153,7 @@ frontend.
 Backend:
 
 ```powershell
-cd "C:\Personal Projects\Codex Challenge\backend"
+cd backend
 .\.venv\Scripts\python.exe -m pytest
 ```
 
@@ -166,7 +166,7 @@ Expected:
 Frontend:
 
 ```powershell
-cd "C:\Personal Projects\Codex Challenge\frontend"
+cd frontend
 npm.cmd run build
 ```
 
@@ -199,7 +199,6 @@ Expected:
 Create an empty GitHub repository first, then run:
 
 ```powershell
-cd "C:\Personal Projects\Codex Challenge"
 git init
 git add .
 git commit -m "Initial orbital decay simulator"
@@ -302,4 +301,3 @@ After Render and Vercel are both deployed:
   latitude-based population fallback.
 - Re-entry and debris calculations are credible approximations for demo use,
   not certified regulatory tools.
-
