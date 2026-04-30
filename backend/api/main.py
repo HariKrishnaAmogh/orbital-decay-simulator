@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import os
+
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -14,9 +16,20 @@ app = FastAPI(
     description="Orbital decay, re-entry, debris survival, and casualty expectation API.",
 )
 
+cors_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+cors_origins.extend(
+    origin.strip()
+    for origin in os.getenv("CORS_ORIGINS", "").split(",")
+    if origin.strip()
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_origins=cors_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -47,4 +60,3 @@ async def celestrak_tle(norad_id: str) -> TleResponse:
 @app.get("/api/space-weather", response_model=SpaceWeatherResponse)
 async def space_weather() -> SpaceWeatherResponse:
     return await get_space_weather()
-
